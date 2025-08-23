@@ -1,0 +1,18 @@
+# name of my workflow 
+
+name: My Test Workflow
+
+on: [push]
+
+#jobs run in parallel by default each runs steps in sequance 
+
+jobs:
+
+    # jobs to print something 
+   say-hello:
+       runs-on: ubuntu-latest
+       steps:
+         - run: echo "Hello, GitHub Actions!"
+
+
+
