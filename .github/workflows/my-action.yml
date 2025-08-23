@@ -7,21 +7,20 @@ on: [push]
 #jobs run in parallel by default each runs steps in sequance 
 
 jobs:
-
     # jobs to print something 
-   say-hello:
-       runs-on: ubuntu-latest
-       steps:
-         - name: say hello
-         - run: echo "Hello, GitHub Actions!"
-       # Job to build and rest c code 
-       needs: [say-hello]
-       runs-on: ubuntu-latest
-       steps:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: say hello
+        run: echo "Hello, GitHub Actions!"
+  build-and-test:    
+      # Job to build and rest c code 
+    needs: [say-hello]
+    runs-on: ubuntu-latest
+    steps:
+          # check out htis repo
+      - name: check out this repo
+        uses: actions/checkout@v3
 
-                # check out htis repo
-          - name: check out this repo
-            uses: actions/checkout@v3
-
-          - name: install dependencies
-            run: sudo apt install -y build-essential python3
+      - name: install dependencies
+        run: sudo apt install -y build-essential python3
