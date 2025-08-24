@@ -14,7 +14,7 @@ jobs:
         run: echo "Hello, GitHub Actions!"
   build-and-test:    
       # Job to build and rest c code 
-    needs: [say-hello]
+    #needs: [say-hello]
     runs-on: ubuntu-latest
     steps:
           # check out htis repo
