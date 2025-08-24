@@ -5,7 +5,6 @@ name: My Test Workflow
 on: [push]
 
 #jobs run in parallel by default each runs steps in sequance 
-
 jobs:
     # jobs to print something 
   say-hello:
@@ -24,3 +23,10 @@ jobs:
 
       - name: install dependencies
         run: sudo apt install -y build-essential python3
+
+      # print pwd
+      - name: print working directory
+        run: pwd
+      # run test script file 
+      - name: run test script
+        run: python3 test.py
