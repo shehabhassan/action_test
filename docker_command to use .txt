@@ -1,0 +1,36 @@
+command uses in Docker file and YML 
+
+# this command for build new image in the current dirctory -t for tag 
+1- docker build -t my-image .
+
+# this command for make new container -i -t command line intercation
+docker create -i -t --entrypoint="/bin/bash" --name my-container my-image
+
+# list all images in docker 
+docker images 
+
+# list all container in image 
+docker container ls -a
+
+# copy the file to container with specfic path and directory 
+docker cp test.py my-container:/tests/test.py 
+
+# start active mode of container 
+docker start -i my-container 
+
+#make some changes 
+docker container rm my-container
+
+# run the container inside of it 
+docker start -i loving_feistel
+
+# auto delete docker after run it 
+docker run --rm my-image
+
+# docker images delete
+docker rmi my-image 
+
+#display return value in linux command 
+
+docker run --rm my-image
+
